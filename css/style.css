@@ -1,0 +1,15 @@
+/* Color palette :
+yellow pale     : #EAFF31 #eaff31
+green pale      : #D1DC91 #d1dc91
+grey dark       : #56584B #56584b
+black           : #000
+
+Taken on 28 Jan 2017 from :
+http://www.colourlovers.com/craft/trends/handmade/7866/The_Cheaper_Show
+*/
+
+#map {
+    width: 100%;
+    height: 600px;
+    background-color: #eaff31;
+}
