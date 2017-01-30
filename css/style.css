@@ -10,6 +10,30 @@ http://www.colourlovers.com/craft/trends/handmade/7866/The_Cheaper_Show
 
 #map {
     width: 100%;
-    height: 600px;
+    height: 550px;
     background-color: #eaff31;
 }
+
+h1 {
+    width: 100%;
+    color: #eaff31;
+    font-size: 48px;
+    background-color: #56584b;
+    text-align: center;
+    padding: 50px;
+}
+
+.localist {
+    text-decoration: none;
+    color: #eaff31;
+    background-color: #56584b;
+} 
+
+.showlist {
+    background-color: #56584b;
+}
+
+li {
+    list-style: none;
+}
+

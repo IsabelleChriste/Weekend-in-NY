@@ -18,4 +18,4 @@ Project has been tested on these browser:
 
 ### Map style
 
-Style of map was created using customer color and [Snazzy Map](https://snazzymaps.com/).
+Style of map was created using custome color and [Snazzy Map](https://snazzymaps.com/).

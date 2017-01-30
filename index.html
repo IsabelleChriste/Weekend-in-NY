@@ -3,30 +3,51 @@
 
 <head>
     <meta name="viewport" content="initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href='css/style.css' rel='stylesheet'>
     <title>Weekend in NY</title>
 </head>
 
 <body>
     <h1>Weekend in NY</h1>
-    
-    <ul data-bind="foreach: locationsList">
-        <li data-bind="text: title"></li>
-    </ul>
-    <div>
-        <input id="show-listings" type="button" value="Show Listings">
-        <input id="hide-listings" type="button" value="Hide Listings">
+
+    <div class="col-md-2">
+        <div class="localist">
+            <p>Places I want to visit :</p>
+            <ul data-bind="foreach: locationsList">
+                <li data-bind="text: title"></li>
+                <a href="#" data-bind="click: $parent.removePlace">Delete</a>
+            </ul>
+        </div>
+        <div class="localform">
+            <form data-bind="submit: addPlace">
+                <input data-bind="value: newPlace" placeholder="Where to go?">
+                <button type="submit">Add</button>
+                
+            </form>
+        </div>
+        <div class="showlist">
+            <input id="show-listings" type="button" value="Show Listings">
+            <input id="hide-listings" type="button" value="Hide Listings">
+        </div>
     </div>
-    <div id='map'></div>
-   
-    <script async defer 
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-ADb_PJOBi8ygIrGBGZdehJPWsbtyE24&callback=initMap"></script>
+
+    <div class="col-md-10">
+        <div id='map'></div>
+    </div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-ADb_PJOBi8ygIrGBGZdehJPWsbtyE24&callback=initMap"></script>
+
     <script type='text/javascript' src='js/knockout-3.4.1.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script type='text/javascript' src="js/bootstrap.min.js"></script>
     <script type='text/javascript' src='js/app.js'></script>
     <script type='text/javascript' src='js/main.js'></script>
-    
+
 </body>
 
 </html>

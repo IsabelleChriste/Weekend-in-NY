@@ -207,6 +207,7 @@ function initMap() {
         marker.addListener('mouseout', function () {
             this.setIcon(defaultIcon);
         });
+        
         marker.setMap(map);
     }
     // Event listener for buttons show and hide locations
