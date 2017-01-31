@@ -37,3 +37,17 @@ li {
     list-style: none;
 }
 
+.showlist{
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.moreIdeas {
+    margin-top: 10px;
+}
+
+#venueHeader {
+    
+    color: #eaff31;
+    background-color: #56584b;
+}
