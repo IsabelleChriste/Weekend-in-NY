@@ -38,7 +38,7 @@ function loadData() {
     }).error(function (e) {
         $venueHeader.text('Venues not available!');
     });
-
+    
 
     return false;
 

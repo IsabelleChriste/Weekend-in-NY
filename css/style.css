@@ -50,6 +50,17 @@ h1 {
     margin-top: 15px;
 } 
 
+.localform {
+    margin-top: 10px;
+    background-color: #56584b;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.form {
+    padding-bottom: 15px;
+}
+
 .showlist {
     background-color: #56584b;
     padding: 10px;
@@ -61,18 +72,27 @@ li {
     list-style: none;
 }
 
-.showlist{
-   
-   
+.buttonlists {
+    margin: 5px;
 }
 
 .moreIdeas {
     margin-top: 10px;
+    background-color: #56584b;
+    padding-top: 15px;
+    text-align: center;
 }
 
 #venueHeader {
     font-size: 18px;
     color: #eaff31;
     background-color: #56584b;
+}
+
+#feelings {
+    margin-top: 10px;
+    color: white;
+    background-color: #56584b;
+    text-align: center;
 }
 

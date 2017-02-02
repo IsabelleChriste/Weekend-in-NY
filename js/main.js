@@ -175,8 +175,6 @@ function initMap() {
         styles: styles,
         mapTypeControl: true
     });
-    
-    
     var largeInfowindow = new google.maps.InfoWindow();
     // Setting and Changing color of Marker as one hovers over it
     var defaultIcon = makeMarkerIcon('EAFF31');
@@ -210,7 +208,7 @@ function initMap() {
         
         marker.setMap(map);
     }
-    // Event listener for buttons show and hide locations
+    // Event listener for buttons show, hide and filter locations
     document.getElementById('show-listings').addEventListener('click', showListings);
     document.getElementById('hide-listings').addEventListener('click', hideListings);
     // Add text in the information window
@@ -236,6 +234,8 @@ function initMap() {
             markers[z].setMap(null);
         }
     }
+   
+    
     marker.addListener('click', function () {
         largeInfowindow.open(map, marker);
     })
