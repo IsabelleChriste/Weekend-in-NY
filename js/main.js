@@ -187,9 +187,11 @@ function initMap() {
     for (var i = 0; i < initialLocations.length; i++) {
         var position = initialLocations[i].location;
         var title = initialLocations[i].title;
+        var type = initialLocations[i].type;
         var marker = new google.maps.Marker({
             position: position,
             title: title,
+            type: type,
             icon: defaultIcon,
             animation: google.maps.Animation.DROP,
             id: i
@@ -215,7 +217,7 @@ function initMap() {
     function populateInfoWindow(marker, infowindow) {
         if (largeInfowindow.marker != marker) {
             largeInfowindow.marker = marker;
-            largeInfowindow.setContent('<div>' + marker.title + '</div>');
+            largeInfowindow.setContent('<div>' + marker.title + ' when it is ' + marker.type + ' time!</div>');
             largeInfowindow.open(map, marker);
             largeInfowindow.addListener('closeclick', function () {
                 largeInfowindow.setMarker(null);
@@ -238,5 +240,6 @@ function initMap() {
     
     marker.addListener('click', function () {
         largeInfowindow.open(map, marker);
-    })
+    });
 }
+

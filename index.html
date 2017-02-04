@@ -21,28 +21,30 @@
     
     <div class='mapandlist'>
         <div class="col-md-2">
-             <div class="showlist">
+             <!------<div class="showlist">
                 <input id="show-listings" class="buttonlists" type="button" value="Show Listings">
                 <input id="hide-listings" class="buttonlists" type="button" value="Hide Listings">
             </div>
             <div id="feelings">
-                <p>Feeling like:<a data-bind="text: feelingType"></a></p>
-                <div data-bind="visible: dayFeeling">
-                    <div><input type="radio" name="optionFeeling" value="tea time" data-type="checked: feelingType"/>Tea Time</div>
-                    <div><input type="radio" name="optionFeeling" value="walking" data-type="checked: feelingType"/>Walking</div>
+                <p>Feeling like:<span></span></p>
+                <div >
+                    <div><input type="radio" name="Feeling" value="all" data-type="checked: feelingType"/>All</div>
+                    <div><input type="radio" name="Feeling" value="tea" data-type="checked: feelingType"/>Tea Time</div>
+                    <div><input type="radio" name="Feeling" value="walking" data-type="checked: feelingType"/>Walking</div>
                 </div>
-            </div>
+            </div>------>
             <div class="localist">
                 <div>
-                <p>Places I want to visit :</p>
-                <ul data-bind="foreach: locationsList">
+                <p data-bind="foreach: showallLocation">Places I want to visit :</p>
+                <ul>
                     <li data-bind="text: title"> </li>
-                </li><a class="del" href="#" data-bind="click: $parent.removePlace">Delete</a>
+                    
+                <!--------</li><a class="del" href="#" data-bind="click: $parent.removePlace">Delete</a>------>
                 </ul>
                 </div>
             </div>
            
-            <div class="localform">
+            <!------<div class="localform">
                 <form class='form' data-bind="submit: addPlace">
                     <input id="placename" data-bind="value: newPlace" placeholder="Where to go?">
                     <button type="submit">Add</button>
@@ -55,18 +57,18 @@
                 </form>
                 <h3 id="venueHeader">What to do once there?
                 <ul id="venuetitle">
-                </ul>
-            </h3> </div>
+                </ul></h3>
+            </div>------>
         </div>
     </div>
     <div class="col-md-10">
         <div id="map"></div>
     </div>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-ADb_PJOBi8ygIrGBGZdehJPWsbtyE24&callback=initMap"></script>
-    <script async type="text/javascript" src="js/scriptapi.js"></script>
-    <script type="text/javascript" src="js/knockout-3.4.1.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/knockout-3.4.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/scriptapi.js"></script>
     <script type="text/javascript" src="js/koapp.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
