@@ -165,13 +165,13 @@ function initMap() {
         ]
     }
 ]
-    var nyc = {
-        lat: 40.709597,
-        lng: -73.993021
+    var nyczoo = {
+        lat: 40.7712586,
+        lng: -73.982351
     };
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: nyc,
-        zoom: 13,
+        center: nyczoo,
+        zoom: 12,
         styles: styles,
         mapTypeControl: true
     });
@@ -187,11 +187,9 @@ function initMap() {
     for (var i = 0; i < initialLocations.length; i++) {
         var position = initialLocations[i].location;
         var title = initialLocations[i].title;
-        var type = initialLocations[i].type;
         var marker = new google.maps.Marker({
             position: position,
             title: title,
-            type: type,
             icon: defaultIcon,
             animation: google.maps.Animation.DROP,
             id: i
@@ -211,13 +209,13 @@ function initMap() {
         marker.setMap(map);
     }
     // Event listener for buttons show, hide and filter locations
-    document.getElementById('show-listings').addEventListener('click', showListings);
-    document.getElementById('hide-listings').addEventListener('click', hideListings);
+    //document.getElementById('show-listings').addEventListener('click', showListings);
+    //document.getElementById('hide-listings').addEventListener('click', hideListings);
     // Add text in the information window
     function populateInfoWindow(marker, infowindow) {
         if (largeInfowindow.marker != marker) {
             largeInfowindow.marker = marker;
-            largeInfowindow.setContent('<div>' + marker.title + ' when it is ' + marker.type + ' time!</div>');
+            largeInfowindow.setContent('<div>' + marker.title + '</div>');
             largeInfowindow.open(map, marker);
             largeInfowindow.addListener('closeclick', function () {
                 largeInfowindow.setMarker(null);

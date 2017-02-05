@@ -12,58 +12,33 @@
 </head>
 
 <body>
-    <div class='bigheader col-md-12'>
-        
-            <h1>Weekend in NY</h1> 
-        
-        
-    </div>
-    
-    <div class='mapandlist'>
-        <div class="col-md-2">
-             <!------<div class="showlist">
-                <input id="show-listings" class="buttonlists" type="button" value="Show Listings">
-                <input id="hide-listings" class="buttonlists" type="button" value="Hide Listings">
-            </div>
-            <div id="feelings">
-                <p>Feeling like:<span></span></p>
-                <div >
-                    <div><input type="radio" name="Feeling" value="all" data-type="checked: feelingType"/>All</div>
-                    <div><input type="radio" name="Feeling" value="tea" data-type="checked: feelingType"/>Tea Time</div>
-                    <div><input type="radio" name="Feeling" value="walking" data-type="checked: feelingType"/>Walking</div>
-                </div>
-            </div>------>
-            <div class="localist">
-                <div>
-                <p data-bind="foreach: showallLocation">Places I want to visit :</p>
-                <ul>
-                    <li data-bind="text: title"> </li>
-                    
-                <!--------</li><a class="del" href="#" data-bind="click: $parent.removePlace">Delete</a>------>
-                </ul>
-                </div>
-            </div>
-           
-            <!------<div class="localform">
-                <form class='form' data-bind="submit: addPlace">
-                    <input id="placename" data-bind="value: newPlace" placeholder="Where to go?">
-                    <button type="submit">Add</button>
-                </form>
-            </div>
-            <div class="moreIdeas">
-                <form id="venuesask">
-                    <input  placeholder="Add the neighbourhood!" id="newplace">
-                    <button type="submit">Submit</button>
-                </form>
-                <h3 id="venueHeader">What to do once there?
-                <ul id="venuetitle">
-                </ul></h3>
-            </div>------>
+    <div class="upperside">
+        <div id="headerTitle" class="col-lg-6">
+            <h1>Manhattan Island</h1>
+        </div>
+        <div id="mapplace" class="col-lg-6">
+            <div id="map"></div>
         </div>
     </div>
-    <div class="col-md-10">
-        <div id="map"></div>
+    <div class="downside">
+        <div id="setlist" class="col-lg-6">
+            <h2>Places to go !</h2>
+            <h3 data-bind="foreach: locationsList">
+                <ul>
+                    <li data-bind="text: title"></li>
+                    <a id="areaoftea" data-bind="text: place"></a>
+                </ul>
+            </h3>
+        </div>
+        <div id="area" class="col-lg-6">
+            <h3 id="neighbourhood">What to do in the neighborhood?</h3>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
     </div>
+
+
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-ADb_PJOBi8ygIrGBGZdehJPWsbtyE24&callback=initMap"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="js/knockout-3.4.1.js"></script>

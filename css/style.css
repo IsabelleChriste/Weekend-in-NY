@@ -16,83 +16,40 @@ font-family: 'Lato', sans-serif;
 
 #map {
     width: 100%;
-    height: 650px;
+    height: 420px;
     background-color: #eaff31;
 }
 
 body{
     font-family: 'Lato', sans-serif;
 }
-
-.bigheader {
-    width: 100%;
-    height: 100px;
-    background-color: #56584b;
+#headerTitle {
+    background-color: #d1dc91;
+    text-align: right;
+    padding: 20px;
 }
-
-
-h1 {
-    width: 100%;
-    font-family: 'Montserrat', sans-serif;
-    color: #eaff31;
-    font-size: 48px;
-    
-    text-align: center;
-    
+#setlist {
+    color: #56584b;
+    background-color: #eaff31;   
+    text-align: right;
+    padding: 20px;
 }
-
-.localist {
+li, p {
+    font-size: 15px;
+    list-style-type: none;
     text-decoration: none;
-    color: #eaff31;
+}
+a {
+        font-size: 15px;
+    list-style-type: none;
+    text-decoration: none;
+}
+#area {
+    font-size: 15px;
     background-color: #56584b;
-    padding: 5px;
-    width: 100%;
-    margin-top: 15px;
-} 
-
-.localform {
-    margin-top: 10px;
-    background-color: #56584b;
-    padding-top: 15px;
-    text-align: center;
+    text-align: left;
+    padding: 20px;
 }
-
-.form {
-    padding-bottom: 15px;
+#mapplace {
+    background-color: #d1dc91;
 }
-
-.showlist {
-    background-color: #56584b;
-    padding: 10px;
-    margin-top: 15px;
-    text-align: center;
-}
-
-li {
-    list-style: none;
-}
-
-.buttonlists {
-    margin: 5px;
-}
-
-.moreIdeas {
-    margin-top: 10px;
-    background-color: #56584b;
-    padding-top: 15px;
-    text-align: center;
-}
-
-#venueHeader {
-    font-size: 18px;
-    color: #eaff31;
-    background-color: #56584b;
-}
-
-#feelings {
-    margin-top: 10px;
-    color: white;
-    background-color: #56584b;
-    text-align: center;
-}
-
