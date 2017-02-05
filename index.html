@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="upperside">
+    <div id="upperside">
         <div id="headerTitle" class="col-lg-6">
             <h1>Manhattan Island</h1>
         </div>
@@ -20,21 +20,37 @@
             <div id="map"></div>
         </div>
     </div>
-    <div class="downside">
+    <div id="downside">
         <div id="setlist" class="col-lg-6">
-            <h2>Places to go !</h2>
-            <h3 data-bind="foreach: locationsList">
+            <div class="col-sm-6">
+                <h3>What if I visit the zoo and want a coffee or a tea?</h3>
+                <label>
+                    <input type="radio" name="options" value="Close to the zoo" data-bind="checked: venuesToGo" />You walked too much today !</label>
+                <label>
+                    <input type="radio" name="options" value="Not too far from the zoo" data-bind="checked: venuesToGo" />You have some energy left, but not too much!</label>
+                <label>
+                    <input type="radio" name="options" value="Far from the zoo" data-bind="checked: venuesToGo" />It's a beautiful day, let's go for a walk!</label>
+                <label>
+                    <input type="radio" name="options" value="All" data-bind="checked: venuesToGo" />Give me all the options again.</label>
+            </div>
+            <div class="col-sm-6">
+                <h2>Places to go !</h2>
+                <h3 data-bind="foreach: locationsList">
                 <ul>
                     <li data-bind="text: title"></li>
-                    <a id="areaoftea" data-bind="text: place"></a>
+                    <a data-bind="text: place, click: $parent.console"></a>
                 </ul>
             </h3>
+            </div>
         </div>
         <div id="area" class="col-lg-6">
-            <h3 id="neighbourhood">What to do in the neighborhood?</h3>
-            <ul>
-                <li></li>
-            </ul>
+            <div class='col-sm-6'>
+                <h2 id="nearbyArea">What to do once there?</h3>
+            </div>
+            <div class='col-sm-6'>
+            <button id="removeli" label="Reset">Reset</button>
+            </div>
+
         </div>
     </div>
 

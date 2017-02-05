@@ -7,7 +7,8 @@ var initialLocations = [
             lat: 40.7970001,
             lng:-73.9763774,
         },
-        place: 'Broadway'
+        place: 'Broadway',
+        distance: "Not too far from the zoo"
     },
     {
         title: "The Jolly Goat Coffee Bar",
@@ -15,7 +16,8 @@ var initialLocations = [
             lat: 40.7633605,
             lng:-73.9961698,
         },
-        place: 'Hells Kitchen'
+        place: 'Hells Kitchen',
+         distance: "Far from the zoo"
     }, 
        {
         title: "Housing Works Bookstore Cafe",
@@ -23,7 +25,8 @@ var initialLocations = [
             lat: 40.7247804,
             lng:-74.0007765,
         },
-        place: 'Lower Manhattan'
+        place: 'Error checker: Lower Manhattan',
+         distance: "Close to the zoo"
     }, 
        {
         title: "Two E Bar/Lounge",
@@ -31,7 +34,8 @@ var initialLocations = [
             lat: 40.7651635,
             lng:-73.9742651,
         },
-        place: 'Upper East Side'
+        place: 'Upper East Side',
+         distance: "Close to the zoo"
     }, 
        {
         title: "Té Company",
@@ -39,7 +43,8 @@ var initialLocations = [
             lat: 40.734505,
             lng:-74.0040957,
         },
-        place: 'West Village'
+        place: 'West Village',
+        distance: "Far from the zoo"
     }, 
     
 ]
@@ -49,6 +54,7 @@ var locationsShow = function(data) {
     var self = this;
     this.title = data.title;
     this.place = data.place;
+    this.distance = data.distance
 }
 // ViewModel where the Model gets exctracted to the HTML View. Bindings stuff.
 
@@ -61,16 +67,22 @@ var locationViewModel = function(){
     initialLocations.forEach(function(shopItem){
         self.locationsList.push(new locationsShow(shopItem));
     });
+    // works to retrieve arts from Google API but not how to reset them.
+    this.console = function(){
+        var item = this.place;
+        artyMap(item);
+        self.removeli = function(item){self.remove(item);};
+    };
+    // filter the array by type: distance when radio buttons are clicked.
     
-   /* <li data-bind="text: title"></li>
-                    <a id="areaoftea" data-bind="text: place, click: clickcounter"></a>
-                </ul>
-            </h3>
-        </div>
-        <div id="area" class="col-lg-6">
-            <h3 id="neighbourhood">What to do in the neighborhood?</h3>
-            <ul>
-                <li data-bind="click: numberclicks"></li>*/
+    this.venuesToGo = ko.observable('All');
+    
+    this.selectedVenues = function(){
+      if (this.distance != ){
+          self.locationsList.remove();
+      }  
+    };
+    
     
 }
 
