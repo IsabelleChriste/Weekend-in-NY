@@ -14,14 +14,14 @@ font-family: 'Lato', sans-serif;
 
 #map {
     width: 100%;
-    height: 420px;
+    height: 380px;
 }
 #headerTitle {
     text-align: right;
     vertical-align: middle;
     background-color: #d1dc91;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 #setlist {

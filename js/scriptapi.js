@@ -24,6 +24,7 @@ function artyMap(item) {
             console.log(nearbyArea);
             nearbyArea.append('<li id="venueli">' + onevenue.venue.name + '</li>');
         };
+        allvenues= " ";
         // Remove function that I don't know yet how to make it work !
         $('#removeli').click(function(){
             console.log('removethat');

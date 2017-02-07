@@ -1,5 +1,4 @@
 // List of two places in the array to begin with
-
 var initialLocations = [
     {
         title: "Oren's Daily Roast",
@@ -76,13 +75,7 @@ var locationViewModel = function(){
     // filter the array by type: distance when radio buttons are clicked.
     
     this.venuesToGo = ko.observable('All');
-    
-    this.selectedVenues = function(){
-      if (this.distance != ){
-          self.locationsList.remove();
-      }  
-    };
-    
+ 
     
 }
 
