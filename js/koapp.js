@@ -68,7 +68,7 @@ var locationsShow = function (data) {
 
 // ViewModel where the Model gets exctracted to the HTML View. Bindings stuff.
 var locationViewModel = function () {
-    console.log('vm');
+    //console.log('vm');
     
     var self = this;
     // Setting locationList from the initialLocations list that has already populated. 
@@ -80,7 +80,6 @@ var locationViewModel = function () {
     self.console = function () {
         var item = this.place;
         artyMap(item);
-        
     };
 
     // this is the array with values of the radio buttons 

@@ -17,7 +17,15 @@ Project has been tested on these browser:
 * Click on the radio button and the list will change accordingly. 
 * Once you found the place you want to go to, you can search for artsy places around that location by clicking on the neighborhood underneath the title's location. The result are shown under the third column : Click on the neighbourhood to find art inspiration :. 
 * You can delete the artsy places by clicking on the reset button. 
-* If the neighbourhood is wrong (as in example given of Lower Manhattan, an error message appears. 
+* If the neighbourhood is wrong, as in example given of Lower Manhattan, an error message appears. 
+
+### Responsive
+
+Media query used to make the website responsive for the following screen :
+
+* Nexus 5
+* iPad
+* 1600 x 900
 
 
 ### Map style

@@ -228,9 +228,10 @@ function initMap() {
         });
         marker.setMap(map);
     }
-    // Event listener for buttons show, hide and filter locations
+    //Not used: Event listener for buttons show, hide and filter locations
     //document.getElementById('show-listings').addEventListener('click', showListings);
     //document.getElementById('hide-listings').addEventListener('click', hideListings);
+    
     // Add text in the information window
     var largeInfowindow = new google.maps.InfoWindow();
 
@@ -259,7 +260,6 @@ function initMap() {
             markers[z].setMap(null);
         }
     }
-
 
     marker.addListener('click', function () {
         largeInfowindow.open(map, marker);
