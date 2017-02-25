@@ -65,7 +65,6 @@ var locationsShow = function (data) {
     this.distance = data.distance;
     this.icon = data.icon;
 }
-// Function to create a marker and default marker
 
 // ViewModel where the Model gets exctracted to the HTML View. Bindings stuff.
 var locationViewModel = function () {

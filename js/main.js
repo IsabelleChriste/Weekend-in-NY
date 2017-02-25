@@ -2,7 +2,7 @@
 // var markers = [];
 function initMap() {
     console.log("initMap");
-    /*var styles = [
+    var styles = [
         {
             "featureType": "administrative",
             "elementType": "labels.text.fill",
@@ -165,7 +165,7 @@ function initMap() {
             }
         ]
     }
-]*/
+]
     // Lat Lng of the Zoo
     var nyczoo = {
         lat: 40.767770,
@@ -176,7 +176,7 @@ function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
         center: nyczoo,
         zoom: 12,
-        //styles: styles,
+        styles: styles,
         mapTypeControl: true
     });
 
@@ -207,6 +207,7 @@ function initMap() {
     for (var i = 0; i < initialLocations.length; i++) {
         var position = initialLocations[i].location;
         var title = initialLocations[i].title;
+        var place = initialLocations[i].place;
         var marker = new google.maps.Marker({
             position: position,
             title: title,
