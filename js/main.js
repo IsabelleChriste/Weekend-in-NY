@@ -1,7 +1,8 @@
 // Loading the map centered in New York //
-var markers = [];
+// var markers = [];
 function initMap() {
-    var styles = [
+    console.log("initMap");
+    /*var styles = [
         {
             "featureType": "administrative",
             "elementType": "labels.text.fill",
@@ -164,26 +165,45 @@ function initMap() {
             }
         ]
     }
-]
+]*/
+    // Lat Lng of the Zoo
     var nyczoo = {
-        lat: 40.7712586,
-        lng: -73.982351
+        lat: 40.767770,
+        lng: -73.971855
     };
+    
+    // Retrieving google map
     var map = new google.maps.Map(document.getElementById('map'), {
         center: nyczoo,
         zoom: 12,
-        styles: styles,
+        //styles: styles,
         mapTypeControl: true
     });
-    var largeInfowindow = new google.maps.InfoWindow();
+
     // Setting and Changing color of Marker as one hovers over it
     var defaultIcon = makeMarkerIcon('EAFF31');
     var hoverIcon = makeMarkerIcon('fff');
+    var zooIcon = makeMarkerIcon('9b29ec');
+
     function makeMarkerIcon(markercolor) {
         var markerImage = new google.maps.MarkerImage('http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|' + markercolor, new google.maps.Size(21, 34), new google.maps.Point(0, 0), new google.maps.Point(10, 34), new google.maps.Size(21, 34));
         return markerImage;
     }
+
+    var zooMarker = new google.maps.Marker({
+        position: nyczoo,
+        title: "Central Park Zoo",
+        icon: zooIcon,
+        animation: google.maps.Animation.DROP,
+        id: i
+    });
+    zooMarker.addListener('click', function () {
+                populateInfoWindow(this, largeInfowindow);
+            })
+    
+    zooMarker.setMap(map);
     // One marker per location and add to an array.
+    var markers = [];
     for (var i = 0; i < initialLocations.length; i++) {
         var position = initialLocations[i].location;
         var title = initialLocations[i].title;
@@ -205,22 +225,26 @@ function initMap() {
         marker.addListener('mouseout', function () {
             this.setIcon(defaultIcon);
         });
-        
         marker.setMap(map);
     }
     // Event listener for buttons show, hide and filter locations
     //document.getElementById('show-listings').addEventListener('click', showListings);
     //document.getElementById('hide-listings').addEventListener('click', hideListings);
     // Add text in the information window
+    var largeInfowindow = new google.maps.InfoWindow();
+
     function populateInfoWindow(marker, infowindow) {
         if (largeInfowindow.marker != marker) {
             largeInfowindow.marker = marker;
             largeInfowindow.setContent('<div>' + marker.title + '</div>');
             largeInfowindow.open(map, marker);
-            largeInfowindow.addListener('closeclick', function () {
-                largeInfowindow.setMarker(null);
-            })
+            
         }
+    }
+    function populatezooInfoWindow(zooMarker, infowindow){
+            largeInfowindow.zooMarker = zoomarker;
+            largeInfowindow.open(map, zooMarker);
+            
     }
     //Add possibility of showing markers
     function showListings() {
@@ -234,10 +258,10 @@ function initMap() {
             markers[z].setMap(null);
         }
     }
-   
-    
+
+
     marker.addListener('click', function () {
         largeInfowindow.open(map, marker);
     });
-}
 
+}

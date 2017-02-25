@@ -6,6 +6,7 @@ YYYYMMDD
 URL :  https://api.foursquare.com/v2/venues/search?ll=40.7,-74&client_id=CBIVLNR1NJKAFCBVDSOPVUTNX4WMB3CQMK11NPLWFFIBMQUM&client_secret=QKZM2PG05VO55QNGVUUOBXITOURPII5NPDXY51U3S3VL22LC&v=20170125
 
 */
+/* When clicking on the neighbourhood of the tea or coffee shops, the API retrieves places of arts from around it.*/
 
 function artyMap(item) {
     var nearbyArea = $('#nearbyArea');
@@ -21,21 +22,21 @@ function artyMap(item) {
         var allvenues = data.response.groups[0].items;
         for (var i = 0; i < 6; i++) {
             var onevenue = allvenues[i];
-            console.log(nearbyArea);
-            nearbyArea.append('<li id="venueli">' + onevenue.venue.name + '</li>');
+            nearbyArea.append('<p id="venueli">' + onevenue.venue.name + '</p>');
         };
-        allvenues= " ";
-        // Remove function that I don't know yet how to make it work !
-        $('#removeli').click(function(){
-            console.log('removethat');
-        })
-    // If the URL does not work, an error message will appear    
+        // If the URL does not work, an error message will appear    
     }).error(function (e) {
-        nearbyArea.text('Venues not available!');
+        $("#errormessage").text('Venues not available!');
     });
-    
-
     return false;
-
 };
 $('#neighbourghood').append(artyMap);
+
+/* Reset button removes the art places shown.*/
+
+$("#deleteli").click(function () {
+    $("p").each(function(){
+        $(this).remove();
+    });
+    $("#errormessage").remove();
+});

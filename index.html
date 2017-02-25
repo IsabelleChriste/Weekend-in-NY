@@ -2,68 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="X-UA-Compatible">
     <meta charset="utf-8">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato|Montserrat" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" media="screen and (max-width: 412px)">
+    <link href="css/style.css" rel="stylesheet" media="screen and (min-width: 413px) and (max-width: 768px)">
+    <link href="css/style.css" rel="stylesheet" media="screen and (min-width: 769px)">
+
     <title>Weekend in NY</title>
 </head>
 
-<body>
+<body data-bind="showMap: ">
+    <!------- Title----------->
     <div id="upperside">
-        <div id="headerTitle" class="col-lg-6">
-            <h1>Manhattan Island</h1>
+        <div id="headerTitle">
+            <h1>Manhattan Island : Zoo</h1>
         </div>
-        <div id="mapplace" class="col-lg-6">
+    </div>
+    <!------- Map ----------->
+    <div>
+        <div id="mapplace">
             <div id="map"></div>
         </div>
     </div>
-    <div id="downside">
-        <div id="setlist" class="col-lg-6">
-            <div class="col-sm-6">
-                <h3>What if I visit the zoo and want a coffee or a tea?</h3>
-                <label>
-                    <input type="radio" name="options" value="Close to the zoo" data-bind="checked: venuesToGo" />You walked too much today !</label>
-                <label>
-                    <input type="radio" name="options" value="Not too far from the zoo" data-bind="checked: venuesToGo" />You have some energy left, but not too much!</label>
-                <label>
-                    <input type="radio" name="options" value="Far from the zoo" data-bind="checked: venuesToGo" />It's a beautiful day, let's go for a walk!</label>
-                <label>
-                    <input type="radio" name="options" value="All" data-bind="checked: venuesToGo" />Give me all the options again.</label>
-                    <h3>Click on the text</h3>
-                    <h2 id="selectedVenue" data-bind="text: venuesToGo"></h2>
-            </div>
-            <div class="col-sm-6">
-                <h2>Places to go !</h2>
-                <h3 data-bind="foreach: locationsList">
-                <ul>
-                    <li data-bind="text: title"></li>
-                    <a data-bind="text: place, click: $parent.console"></a>
-                </ul>
+    <!------- Downside with three column ----------->
+    <section id="downside container">
+        <div id="filter" class="col-lg-4">
+            <h3>From the zoo, click to find coffee shops or tea room.</h3>
+            <label>
+                <input type="radio" name="options" value="Close to the zoo" data-bind="checked: venuesToGo" />Short walk</label>
+            <br>
+            <label>
+                <input type="radio" name="options" value="Not too far from the zoo" data-bind="checked: venuesToGo" />A bit farther away</label>
+            <br>
+            <label>
+                <input type="radio" name="options" value="Far from the zoo" data-bind="checked: venuesToGo" />Longer distance</label>
+            <br>
+            <label>
+                <input type="radio" name="options" value="All" data-bind="checked: venuesToGo" />Give me all the options again.</label>
+            <h3></h3>
+
+            <h2 id="selectedVenue"></h2>
+        </div>
+        <!------- Venues list that has been selected ----------->
+        <div id="tearooms" class="col-lg-4">
+            <h2>Places to go !</h2>
+            <ul data-bind="foreach: selectedCategory">
+
+                <li data-bind="text: title"></li>
+
+                <a data-bind="text: place, click: $parent.console"></a>
+
+            </ul>
             </h3>
+        </div>
+        <!------- Retrieve information from the API for art places around ----------->
+        <div id="area" class="col-lg-4">
+            <div class='aeraparagraph'>
+                <h2 id="nearbyArea">Click on the neighbourhood to find art inspiration : </h2>
+                <h3 id="errormessage"></h3>
+                <div>
+                    <button id="deleteli">Reset</button>
+                </div>
             </div>
         </div>
-        <div id="area" class="col-lg-6">
-            <div class='col-sm-6'>
-                <h2 id="nearbyArea">What to do once there?</h3>
-            </div>
-            <div class='col-sm-6'>
-            <button id="removeli" label="Reset">Reset</button>
-            </div>
-
-        </div>
-    </div>
-
-
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-ADb_PJOBi8ygIrGBGZdehJPWsbtyE24&callback=initMap"></script>
+    </section>
+    <section>
+        <footer>Google Map API and Foursquare API used in this website. Non-commercial use.</footer>
+    </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script type="text/javascript" src="js/knockout-3.4.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/scriptapi.js"></script>
+    <script type="text/javascript" src="js/scriptapi.js" defer></script>
     <script type="text/javascript" src="js/koapp.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-ADb_PJOBi8ygIrGBGZdehJPWsbtyE24&callback=initMap"></script>
 </body>
 
 </html>
